@@ -83,7 +83,12 @@ class SeaArtMergeStoryCondition:
             "conditioning_2": ("CONDITIONING", ), 
             "conditioning_3": ("CONDITIONING", ), 
             "conditioning_4": ("CONDITIONING", ), 
-            "conditioning_5": ("CONDITIONING", )
+            "conditioning_5": ("CONDITIONING", ), 
+            "conditioning_6": ("CONDITIONING", ), 
+            "conditioning_7": ("CONDITIONING", ), 
+            "conditioning_8": ("CONDITIONING", ), 
+            "conditioning_9": ("CONDITIONING", ), 
+            "conditioning_10": ("CONDITIONING", )
                  }}
     
     RETURN_TYPES = ("CONDITIONING",)
@@ -105,9 +110,9 @@ class SeaArtMergeStoryCondition:
                     list[index] = torch.cat((list[index],empty_cond[0][0]),dim=1)
         return list  
 
-    def merge(self,clip,conditioning_1,conditioning_2=None,conditioning_3=None,conditioning_4=None,conditioning_5=None):
+    def merge(self,clip,conditioning_1,conditioning_2=None,conditioning_3=None,conditioning_4=None,conditioning_5=None,conditioning_6=None,conditioning_7=None,conditioning_8=None,conditioning_9=None,conditioning_10=None):
         filter_conds = []
-        for x in [conditioning_1,conditioning_2,conditioning_3,conditioning_4,conditioning_5]:
+        for x in [conditioning_1,conditioning_2,conditioning_3,conditioning_4,conditioning_5,conditioning_6,conditioning_7,conditioning_8,conditioning_9,conditioning_10]:
             if isinstance(x,list):
                 for c in x:
                     filter_conds.append(c)
